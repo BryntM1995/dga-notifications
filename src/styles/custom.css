@@ -1,0 +1,28 @@
+:root {
+  --dga-blue: #1d2d5f;
+  --dga-green: #6ab140;
+  --dga-light: #f8fafc;
+}
+body {
+  background: #f5f7fb;
+}
+.required::after {
+  content: ' *';
+  color: #dc3545;
+}
+.page-id {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+.help-text {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+.page-id {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+.list-group-item.active {
+  background: #1d2d5f;
+  border-color: #1d2d5f;
+}

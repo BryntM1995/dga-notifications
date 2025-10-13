@@ -1,9 +1,9 @@
 import PageHeader from '../../components/layout/PageHeader';
 
-export default function Modules() {
+export default function Systems() {
   return (
     <>
-      <PageHeader title="Modulos" id="MANT-INS-001" />
+      <PageHeader title="Sistemas" id="MANT-INS-001" />
       {/* tabla/form aquí */}
     </>
   );
