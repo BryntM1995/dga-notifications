@@ -31,7 +31,6 @@ api.interceptors.request.use((config: InternalAxiosRequestConfig) => {
   return config;
 });
 
-// ===== refresh con token (mock o real)
 async function doRefresh(): Promise<string | null> {
   try {
     if (useMock) {
@@ -46,7 +45,6 @@ async function doRefresh(): Promise<string | null> {
     const expiredToken = localStorage.getItem('token');
     if (!expiredToken) return null;
 
-    // ✅ construye URL válida siempre
     const refreshUrl = useProxy ? '/api/refresh' : `${baseURL}/api/refresh`;
     const res = await axios.post(
       refreshUrl,

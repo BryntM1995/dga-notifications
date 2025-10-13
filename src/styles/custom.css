@@ -20,7 +20,7 @@ body {
 }
 .topbar {
   z-index: 1030;
-} /* mayor que .offcanvas-backdrop */
+}
 
 .page-id {
   font-size: 0.85rem;
@@ -28,7 +28,7 @@ body {
 }
 
 .list-group-item.active {
-  background: #1d2d5f;
+  background: #4db4e3;
   border-color: #1d2d5f;
 }
 

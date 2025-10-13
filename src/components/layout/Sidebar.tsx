@@ -52,7 +52,7 @@ const MenuContent: React.FC<{ onNavigate?: () => void }> = ({ onNavigate }) => {
   return (
     <div className="p-3">
       <div className="mb-3">
-        <h6 className="mb-0">DGA · Notificaciones</h6>
+        <h6 className="mb-0">DGA · Management</h6>
         <small className="text-muted">Menú</small>
       </div>
 

@@ -15,7 +15,7 @@ export type User = {
 type AuthContextType = {
   user: User | null;
   token: string | null;
-  expireAt: number | null; // epoch seconds
+  expireAt: number | null;
   login: (username: string, password: string) => Promise<void>;
   refresh: () => Promise<boolean>;
   logout: () => void;
@@ -70,8 +70,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // ---- REFRESH -------------------------------------------------------------
   const refresh = async (): Promise<boolean> => {
     try {
-      // api.ts ya maneja mock/real internamente si lo configuraste así;
-      // aquí llamamos siempre al mismo endpoint.
       const res = await api.post('/api/refresh');
       const newToken: string = res.data?.access_token;
       const expiresIn: number = Number(res.data?.expires_in ?? 0);
@@ -103,7 +101,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const secondsLeft = expireAt - now;
 
     if (secondsLeft <= 0) {
-      // Si ya expiró, intenta refrescar enseguida.
       refresh();
       return;
     }
@@ -134,11 +131,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, []);
 
   // ---- LOGOUT --------------------------------------------------------------
-  const logout = () => {
+  const logout = async () => {
     if (timerRef.current) {
       window.clearTimeout(timerRef.current);
       timerRef.current = null;
     }
+    await api.post('/api/logout');
     setToken(null);
     setUser(null);
     setExpireAt(null);
