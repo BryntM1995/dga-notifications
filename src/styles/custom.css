@@ -10,19 +10,29 @@ body {
   content: ' *';
   color: #dc3545;
 }
-.page-id {
-  font-size: 0.85rem;
-  color: #6c757d;
-}
 .help-text {
   font-size: 0.8rem;
   color: #6c757d;
 }
+
+.btn[aria-expanded='true'] {
+  background: #f8f9fa;
+}
+.topbar {
+  z-index: 1030;
+} /* mayor que .offcanvas-backdrop */
+
 .page-id {
   font-size: 0.85rem;
   color: #6c757d;
 }
+
 .list-group-item.active {
   background: #1d2d5f;
   border-color: #1d2d5f;
+}
+
+/* hover sutil */
+.list-group-item-action:hover:not(.active) {
+  background: #f6f8ff;
 }
