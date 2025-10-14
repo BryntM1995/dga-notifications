@@ -71,7 +71,7 @@ const UserForm: React.FC<Props> = ({ title, initial, onSubmit, modalId }) => {
         department: v.department || undefined,
         status: v.status ? 1 : 0,
       };
-      // password: solo al crear o si el usuario la ingresó en edición
+
       if (!isEdit || (v.password && v.password.length >= 6)) {
         if (v.password) payload.password = v.password;
       }
@@ -150,7 +150,6 @@ const UserForm: React.FC<Props> = ({ title, initial, onSubmit, modalId }) => {
                   )}
                 </div>
 
-                {/* Solo pedir password en creación. En edición es opcional */}
                 <div className="col-md-6">
                   <label className="form-label">Contraseña {isEdit ? '(opcional)' : ''}</label>
                   <input

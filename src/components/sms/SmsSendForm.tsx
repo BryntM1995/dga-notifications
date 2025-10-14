@@ -45,7 +45,6 @@ const SmsSendForm: React.FC<Props> = ({ onSend, processing }) => {
         : [];
     try {
       await onSend({ phone: v.phone.trim(), template: v.template, vars });
-      // reset manteniendo template seleccionado
       reset((curr) => ({ phone: '', template: curr.template, varsLine: '' }));
     } catch (e: any) {
       setErr(e?.message || 'No se pudo enviar el SMS.');

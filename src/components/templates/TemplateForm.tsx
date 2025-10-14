@@ -68,7 +68,6 @@ const TemplateForm: React.FC<Props> = ({ title, initial, onSubmit, modalId }) =>
     }
   };
 
-  // chips de variables VAR0..VAR9 para insertar
   const insertVar = (n: number) => {
     const ta = document.getElementById(modalId + '_msg') as HTMLTextAreaElement;
     if (!ta) return;

@@ -118,7 +118,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     };
   }, [token, expireAt]);
 
-  // ---- INFO DE AUTENTICACIÓN (opcional, para debug) -----------------------
+  // ---- INFO DE AUTENTICACIÓN  -----------------------
   useEffect(() => {
     if (useMock) {
       mockAuthInfo().then((i) => console.log('Auth info (mock):', i));

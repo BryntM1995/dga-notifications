@@ -12,7 +12,6 @@ const ProtectedLayout: React.FC = () => {
         <div className="container-fluid py-3">
           <div className="row g-3">
             <div className="col-12 col-lg-3 col-xl-2">
-              {/* En móvil no se ve (Offcanvas cubrirá ese rol) */}
               <Sidebar />
             </div>
             <div className="col-12 col-lg-9 col-xl-10">

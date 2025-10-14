@@ -10,7 +10,6 @@ const Topbar: React.FC = () => {
         className="container-fluid d-flex align-items-center justify-content-between"
         style={{ minHeight: 64 }}
       >
-        {/* Botón para abrir el offcanvas SOLO en móvil */}
         <button
           className="btn btn-outline-light d-lg-none"
           type="button"

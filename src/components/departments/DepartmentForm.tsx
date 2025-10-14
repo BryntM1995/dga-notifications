@@ -63,7 +63,6 @@ const DepartmentForm: React.FC<Props> = ({ initial, onSubmit, title, onClose }) 
     setProcessing(true);
     setError(null);
     try {
-      // mapear a DepartmentInput (status: 0|1)
       const payload: DepartmentInput = {
         name: v.name,
         subdirection_id: v.subdirection_id,
